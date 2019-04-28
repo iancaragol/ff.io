@@ -165,14 +165,14 @@ def model(X, Y, characters):
 
     # Only save model when loss function decreases
     filepath = sys.path[0] + "\\_hdf5\\model-{epoch:02d}-{loss:.4f}.hdf5"
-    checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=True, mode='min')
+    checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose = verbose, save_best_only = True, mode='min')
     callbacks_list = [checkpoint]
 
     model.fit(X, Y, epochs=epoch_num, batch_size=batch_s, callbacks=callbacks_list)
 
     return model
 
-def generate_text(model, length, text, X, characters, n_to_char, char_to_n, verbose = True, seed_text_str = None):
+def generate_text(model, length, text, X, characters, n_to_char, char_to_n, seed_text_str = None):
     """
     Generates output text. Given a seed character, uses that character to predict the next character.
     """
