@@ -10,6 +10,7 @@ from sklearn.preprocessing import normalize
 
 # Model type (char or word)
 model_type = 'char'
+text_lower = True # Input data as all lower case?
 
 # Print steps 
 verbose = True
@@ -25,7 +26,7 @@ epoch_num = 10 # Number of epochs
 batch_s = 100 # Batch size
 
 # Filepaths
-input_filepath = sys.path[0] + "\\_data\\top5_stories.txt" # Training data
+input_filepath = sys.path[0] + "\\_data\\ff - top5_stories.txt" # Training data
 output_filepath = f"\\_outputs\\Output-{layers_count}-{layers_dim}-{epoch_num}.txt" # Output 
 
 # Load specific model
@@ -44,7 +45,11 @@ def read_text(filepath):
     """
 
     text = open(filepath, encoding = "utf8").read()
-    return text.lower()
+    
+    if text_lower:
+        return text.lower()
+
+    return text
 
 def character_map(text):
     """
