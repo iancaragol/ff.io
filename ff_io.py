@@ -21,11 +21,11 @@ layers_count = 3 # Number of hidden layers
 layers_dim = 700 # Hidden layer dimension   
 dropout_layers = (1,) # Tuple of output layer locations
 dropout_value = 0.3 # Dropout layer probabilities 
-epoch_num = 1 # Number of epochs
+epoch_num = 10 # Number of epochs
 batch_s = 100 # Batch size
 
 # Filepaths
-input_filepath = sys.path[0] + "\\_data\\ff - Wait, what.txt" # Training data
+input_filepath = sys.path[0] + "\\_data\\top5_stories.txt" # Training data
 output_filepath = f"\\_outputs\\Output-{layers_count}-{layers_dim}-{epoch_num}.txt" # Output 
 
 # Load specific model
