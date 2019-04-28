@@ -25,8 +25,8 @@ epoch_num = 1 # Number of epochs
 batch_s = 100 # Batch size
 
 # Filepaths
-filepath = sys.path[0] + "\\_data\\ff - Wait, what.txt" # Training data
-output_file = f"\\_outputs\\Output-{layers_count}-{layers_dim}-{epoch_num}.txt" # Output 
+intput_filepath = sys.path[0] + "\\_data\\ff - Wait, what.txt" # Training data
+output_filepath = f"\\_outputs\\Output-{layers_count}-{layers_dim}-{epoch_num}.txt" # Output 
 
 # Load specific model
 load_model = False # Set this to true or false to change from load to gen
@@ -249,12 +249,13 @@ def train_and_generate(text_path):
     return gen_text
 
 def main():
-    gen_text = train_and_generate(filepath)
+    gen_text = train_and_generate(input_filepath)
 
     print()
     print(gen_text)
 
-    with open(output_file, "w") as text_file:
+    os.makedirs(os.path.dirname(output_filepath), exist_ok=True)
+    with open(output_filepath, "w") as text_file:
         text_file.write(gen_text)
 
 
