@@ -25,7 +25,7 @@ epoch_num = 1 # Number of epochs
 batch_s = 100 # Batch size
 
 # Filepaths
-intput_filepath = sys.path[0] + "\\_data\\ff - Wait, what.txt" # Training data
+input_filepath = sys.path[0] + "\\_data\\ff - Wait, what.txt" # Training data
 output_filepath = f"\\_outputs\\Output-{layers_count}-{layers_dim}-{epoch_num}.txt" # Output 
 
 # Load specific model
